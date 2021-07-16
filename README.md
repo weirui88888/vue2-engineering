@@ -63,3 +63,21 @@ vscode 编辑器中关于 eslint && stylelint 的配置也可以设置再项目�
 ```
 
 ---
+
+---
+
+### 项目使用 commitizen 生成提交记录
+
+- 本地全局需要安装 commitizen 命令
+- 在项目目录里，运行下面的命令，使其支持 Angular 的 Commit message 格式
+
+```javascript
+// 使用npm包cz-conventional-changelog进行初始化
+commitizen init cz-conventional-changelog --save --save-exact
+```
+
+- 以后 commit 的时候直接 git cz 就可以了,其中如果时破坏性的改动需要再 breaking changes 步骤做说明
+
+### 给 commit 添加提交信息表情，方便知道当前提交的作为
+
+- 本地配置快捷 alias 方便后面获取 emoji 表情书写格式
