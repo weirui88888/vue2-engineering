@@ -17,7 +17,7 @@ export default {
   data() {},
   methods: {
     say() {
-      let a = 123
+      var a = 123
     }
   }
 }
