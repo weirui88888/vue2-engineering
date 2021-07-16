@@ -1,24 +1,8 @@
 # husky-commitlint
 
-## Project setup
-```
-npm install
-```
-
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- vue2
+- eslint+prettier
+- install eslint-config-prettier
+- copy content in .prettier.js
+- copy content in .eslintrc.js
+- copy content in .eslintignore
