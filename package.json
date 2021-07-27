@@ -6,6 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
+    "staging": "vue-cli-service serve --mode staging",
     "prepare": "husky install"
   },
   "dependencies": {

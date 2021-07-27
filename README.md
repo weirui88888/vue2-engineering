@@ -81,3 +81,4 @@ commitizen init cz-conventional-changelog --save --save-exact
 ### 给 commit 添加提交信息表情，方便知道当前提交的作为
 
 - 本地配置快捷 alias 方便后面获取 emoji 表情书写格式
+- git commit --amend 修改上一次的 message
