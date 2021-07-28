@@ -22,7 +22,7 @@ module.exports = {
   ],
   plugins: ['vue'],
   rules: {
-    'no-console': process.env.NODE_ENV === 'production' ? 'error' : 0,
+    'no-console': process.env.NODE_ENV === 'production' ? 'warn' : 0,
     'no-debugger': process.env.NODE_ENV === 'production' ? 'error' : 'off',
     'no-var': 2,
     'no-unused-vars': 0,

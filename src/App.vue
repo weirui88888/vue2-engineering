@@ -5,10 +5,15 @@
 </template>
 
 <script>
+import apier from '@/api/request.js'
 export default {
   name: 'App',
   props: {},
-  mounted() {}
+  mounted() {
+    apier.get('/abc').then(res => {
+      console.log(res)
+    })
+  }
 }
 </script>
 
