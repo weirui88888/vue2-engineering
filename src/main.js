@@ -7,11 +7,8 @@ Vue.config.productionTip = false
 
 Sentry.init({
   Vue,
-  dsn: 'https://4c1f4b17c43742609095ed6d0d184484@o380946.ingest.sentry.io/5949004',
+  dsn: 'https://8134befc9205484db7e70aea15c085c6@o380946.ingest.sentry.io/5949006',
   integrations: [new Integrations.BrowserTracing()],
-  // Set tracesSampleRate to 1.0 to capture 100%
-  // of transactions for performance monitoring.
-  // We recommend adjusting this value in production
   tracesSampleRate: 1.0
 })
 

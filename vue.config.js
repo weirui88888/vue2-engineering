@@ -12,5 +12,5 @@ module.exports = {
       .set('@', resolve('src'))
       .set('@api', resolve('src/api'))
   },
-  productionSourceMap: false
+  productionSourceMap: true
 }

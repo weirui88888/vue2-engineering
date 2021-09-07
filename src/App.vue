@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" class="logo" />
+    this is master , i want to have a try about sentry
   </div>
 </template>
 
