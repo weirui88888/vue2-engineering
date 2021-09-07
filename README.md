@@ -82,3 +82,45 @@ commitizen init cz-conventional-changelog --save --save-exact
 
 - 本地配置快捷 alias 方便后面获取 emoji 表情书写格式
 - git commit --amend 修改上一次的 message
+
+### 配置 github actions 部署服务器
+
+之前的前端构建部署工作都集成在 jenkins 中，配置相对来说比较复杂。
+`github actions` 也可以用来做同样的工作，它的优点在于，结构和语法比较清晰，最主要市场上有一些完善的 actions 包，可以快速帮助我们做一些 CI/CD 集成。
+
+关于 github actions 的入门教程可以看[Github Actions](https:#www.ruanyifeng.com/blog/2019/09/getting-started-with-github-actions.html)
+
+```yml
+# usage
+name: Build and Deploy # action的名称，任意取
+on: # 触发此action的时机，可以看出在往master分支推送的时候会触发
+  push:
+    branches:
+      - master
+jobs: # 此次action包含哪些工作
+  build-and-deploy: # 工作名
+    runs-on: ubuntu-latest # 字段指定运行所需要的虚拟机环境
+    steps: # 工作步骤
+      - name: Checkout 🛎️ # 步骤1
+        uses: actions/checkout@v2.3.1 # 使用市场上的action，这里是用来获取最新的代码
+
+      - name: Use Node.js 12 # 步骤2
+        uses: actions/setup-node@v2 # 同上，设置node版本环境等，还可以设置源
+        with:
+          node-version: '12' # 设置node版本
+
+      - name: Install and Build 🔧 # 步骤3
+        run: |
+          npm install # 执行脚本安装依赖
+          npm run build # 执行脚本编译
+
+      - name: Deploy file 🚀 # 步骤4
+        uses: wlixcc/SFTP-Deploy-Action@v1.0 # 同上，使用该action部署代码到自己的服务器
+        with: # with这个字段一般是指该action支持的配置项
+          username: 'root'
+          server: '123.56.119.218'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }} # 形似${{ secrets.xxx }}这种配置，都是需要在我们的github项目 setting下面配置
+          local_path: './dist/*'
+          remote_path: '/home/www'
+          args: '-o ConnectTimeout=5'
+```
