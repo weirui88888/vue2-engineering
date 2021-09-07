@@ -1,0 +1,31 @@
+name: Build and Deploy
+on:
+  push:
+    branches:
+      - master
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout 🛎️
+        uses: actions/checkout@v2.3.1
+
+      - name: Use Node.js 12
+        uses: actions/setup-node@v2
+        with:
+          node-version: '12'
+
+      - name: Install and Build 🔧 # This example project is built using npm and outputs the result to the 'build' folder. Replace with the commands required to build your project, or remove this step entirely if your site is pre-built.
+        run: |
+          npm install
+          npm run build
+
+      - name: Deploy file 🚀
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        with:
+          username: 'root'
+          server: '123.56.119.218'
+          ssh_private_key: ${{ secrets.SSH_PRIVATE_KEY }}
+          local_path: './dist/*'
+          remote_path: '/home/www'
+          args: '-o ConnectTimeout=5'
