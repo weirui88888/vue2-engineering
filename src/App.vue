@@ -13,6 +13,9 @@ export default {
     apier.get('/abc').then(res => {
       console.log(res)
     })
+  },
+  created() {
+    console.ld(123)
   }
 }
 </script>
