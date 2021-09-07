@@ -10,6 +10,8 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@sentry/tracing": "^6.12.0",
+    "@sentry/vue": "^6.12.0",
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
