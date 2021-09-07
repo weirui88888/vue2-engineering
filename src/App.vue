@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" class="logo" />
-    this is master , i want to have a try about sentry
+    this is master , i1 want to have a try about sentry ha
   </div>
 </template>
 
@@ -16,7 +16,7 @@ export default {
     })
   },
   created() {
-    console.ld(123)
+    console.logg('d3s')
   }
 }
 </script>
