@@ -3,6 +3,14 @@ const SentryWebpackPlugin = require('@sentry/webpack-plugin')
 const IsProduction = process.env.NODE_ENV === 'production'
 
 const resolve = dir => path.join(__dirname, dir)
+// mail.backend: 'smtp'  # Use dummy if you want to disable email entirely
+// mail.host: 'smtp.qq.com'
+// mail.port: 587 // 25不可用
+// mail.username: 'xxxxx@qq.com'
+// mail.password: 'xxx' // token qq邮箱设置页面获取
+// mail.use-tls: false
+// # The email address to send on behalf of
+// mail.from: 'xxxxx@qq.com'
 
 module.exports = {
   chainWebpack: config => {
@@ -22,8 +30,11 @@ module.exports = {
           })
         ],
         output: {
-          sourceMapFilename: '[name].js.map'
-        }
+          // vue inspect --mode development --plugins
+          // vue inspect --mode production > output.js
+          sourceMapFilename: 'js/[name].js.map' // maybe important
+        },
+        devtool: 'source-map' // 貌似必须要加否则--mode staging 不生成sourcemap文件，只在--mode production生成
       }
     }
   },

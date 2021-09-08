@@ -10,13 +10,13 @@ import apier from '@/api/request.js'
 export default {
   name: 'App',
   props: {},
-  mounted() {
-    apier.get('/abc').then(res => {
-      console.log(res)
-    })
-  },
   created() {
-    console.shou('d3s')
+    this.say()
+  },
+  methods: {
+    say() {
+      window.alert.kill123('df')
+    }
   }
 }
 </script>
