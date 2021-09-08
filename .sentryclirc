@@ -1,0 +1,7 @@
+[defaults]
+project=vue-demo
+org=butter
+url=https://sentry-qa.bybutter.com/
+
+[auth]
+token=aff8e9415aea4b5b968e2fa5fae1ff8d2bc9a09c1c61407c8c0c65293feda287

@@ -16,7 +16,7 @@ export default {
     })
   },
   created() {
-    console.logg('d3s')
+    console.shou('d3s')
   }
 }
 </script>

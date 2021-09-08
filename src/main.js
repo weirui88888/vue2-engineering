@@ -9,7 +9,7 @@ Vue.config.productionTip = false
 if (process.env.NODE_ENV !== 'development') {
   Sentry.init({
     Vue,
-    dsn: 'https://8134befc9205484db7e70aea15c085c6@o380946.ingest.sentry.io/5949006',
+    dsn: 'https://b4ebb1115deb4f3587c950c009d9b2bf@sentry-qa.bybutter.com/2',
     integrations: [new Integrations.BrowserTracing()],
     // 设置性能监控采样率
     tracesSampleRate: 1.0,
