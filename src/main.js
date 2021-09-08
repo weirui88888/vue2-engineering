@@ -23,6 +23,8 @@ if (process.env.VUE_APP_ORIGIN_TYPE !== 'development') {
     }
   })
 }
+
+window.abc.say()
 new Vue({
   render: h => h(App)
 }).$mount('#app')

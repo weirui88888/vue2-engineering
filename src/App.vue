@@ -1,7 +1,7 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png" class="logo" />
-    this is master , i1 want to have a try about sentry ha
+    <h1>master</h1>
   </div>
 </template>
 
@@ -10,14 +10,8 @@ import apier from '@/api/request.js'
 export default {
   name: 'App',
   props: {},
-  created() {
-    this.say()
-  },
-  methods: {
-    say() {
-      window.alert.kill123('df')
-    }
-  }
+  created() {},
+  methods: {}
 }
 </script>
 
