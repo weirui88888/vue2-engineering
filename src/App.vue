@@ -7,12 +7,14 @@
 
 <script>
 import apier from '@/api/request.js'
-console.dis(apier)
+
 export default {
   name: 'App',
-  props: {},
-  created() {},
-  methods: {}
+  mounted() {
+    document.addEventListener('click', () => {
+      console.log(window.a.l)
+    })
+  }
 }
 </script>
 
